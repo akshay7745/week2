@@ -4,19 +4,6 @@ const data = [
       customSlide1: {
         options: {},
         slides: [
-            
-            {
-              options: {},
-              id: 1,
-              imageUrl:
-                "./images/watch1.png",
-              title: "Exquisite Watches",
-              colorDescription:"Gold Luxury, Choose Us",
-              description:
-                "Discover the Perfect Watch for Every Occasion and Elevate Your Style with Timeless Elegance and Precision Craftsmanship - watch",
-              price: 499,
-            
-            },
             {
               options: {},
               id: 1,
@@ -33,7 +20,7 @@ const data = [
               options: {},
               id: 2,
               imageUrl:
-                "./images/watch1.png",
+                "./images/watch2.png",
               title: "Exquisite Watches",
               colorDescription:"Gold Luxury, Choose Us",
               description:
@@ -45,7 +32,7 @@ const data = [
               options: {},
               id: 3,
               imageUrl:
-                "./images/watch2.png",
+                "./images/watch3.png",
               title: "Dainty Timepieces",
               colorDescription:"Silver Luxury, Choose Us",
               description:
@@ -57,7 +44,7 @@ const data = [
               options: {},
               id: 4,
               imageUrl:
-                "./images/watch3.png",
+                "./images/watch4.png",
               title: "Refined Timepieces",
               colorDescription:"Choose Luxury, Choose Us",
               description:
@@ -88,11 +75,33 @@ const data = [
         perPage: 1,
         autoplay: true,
       });
+
+    //   const slides = data[0].customSlide1.slides.map((slide)=>{
+    //     const {imageUrl,id,title}=slide;
+    //     return `<li class="splide__slide">
+    //     <img src="${imageUrl}" alt="${title}">
+    //     </li>`
+    // }).join("");
+// this.querySelector(".splide__list").innerHTML=`${slides}`;
+
       splide.mount();
     }
   }
   
-  customElements.define("slider-custom", CustomSlider);
+  customElements.define("custom-slider", CustomSlider);
 
-
-  
+const slides = data[0].customSlide1.slides.map((slide)=>{
+    const {imageUrl,id,title}=slide;
+    return `<li class="splide__slide">
+    <img src="${imageUrl}" alt="${title}">
+    </li>`
+}).join("");
+  document.querySelector(
+    ".carousel"
+  ).innerHTML = `<custom-slider>
+  <section class="splide" aria-label="Splide Basic HTML Example">
+    <div class="splide__track">
+          <ul class="splide__list">${slides}</ul>
+    </div>
+  </section>
+  <custom-slider/>`;
