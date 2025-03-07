@@ -76,14 +76,6 @@ const data = [
         autoplay: true,
       });
 
-    //   const slides = data[0].customSlide1.slides.map((slide)=>{
-    //     const {imageUrl,id,title}=slide;
-    //     return `<li class="splide__slide">
-    //     <img src="${imageUrl}" alt="${title}">
-    //     </li>`
-    // }).join("");
-// this.querySelector(".splide__list").innerHTML=`${slides}`;
-
       splide.mount();
     }
   }
