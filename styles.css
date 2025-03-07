@@ -21,6 +21,7 @@ body >div{
   padding-bottom: 10px ;
   /* background-color: #333; */
   margin-top: 90px;
+  margin-bottom: 144px;
   color: rgba(28, 20, 21, 1);
 
   font-family: Poppins;
@@ -94,6 +95,10 @@ width: 100%;
 height: 100%;
 object-fit: center;
 
+}
+
+.title1{
+  
 }
 /* Responsive Styles */
 @media (max-width: 600px) {
